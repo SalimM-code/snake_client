@@ -5,7 +5,8 @@ const net = require("net");
 const connect = function () {
   const conn = net.createConnection({
     host: '135.23.223.133',
-    port: 50542
+    port: 50542,
+    move: "up"
   });
 
   // handling data from serve
@@ -16,7 +17,9 @@ const connect = function () {
   conn.on('connect', () => {
     conn.write('Successfully connected to game server');
     conn.write('Name: sm8');
+    
   })
+  
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
